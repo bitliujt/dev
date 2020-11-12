@@ -29,7 +29,10 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "$CNAME"
+          echo "Repo: $GITHUB_REPOSITORY"
+        env:
+          CNAME: ${{ secrets.COMPANY_NAME }}
 
       - name: Show file
         run: |
